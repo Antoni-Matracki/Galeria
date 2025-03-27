@@ -1,13 +1,148 @@
-body {
+/* Reset stylów */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Poppins", sans-serif;
+  background: #111; /* Ciemne tło */
+  color: #ddd; /* Jasnoszary tekst */
+}
+
+/* Kontener główny */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Nagłówek */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+header {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+}
+
+/* Nawigacja */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 5px;
+}
+
+/* NOWE CZARNE PRZYCISKI */
+nav button {
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ddd;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #1a1a1a, #333); /* Czarno-szary gradient */
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+nav button:hover {
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Galeria */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery figure {
+  margin: 0;
+  cursor: pointer;
+  text-align: center;
+  background: #222; /* Ciemny szary */
+  padding: 15px;
+  border-radius: 15px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.gallery img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #444;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.gallery figure:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  border-color: #777;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Animacja wejścia dla modala */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal img {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Dodatkowe efekty */
+button,
+.gallery figure {
+  transition: all 0.3s ease-in-out;
 }
